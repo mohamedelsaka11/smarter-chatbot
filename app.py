@@ -1,16 +1,17 @@
-import gradio as gr
-from huggingface_hub import InferenceClient
-from transformers import pipeline
+import gradio as gr # Create interactive interfaces (GUI)
+from huggingface_hub import InferenceClient # tool to connect to the cloud 
+from transformers import pipeline #A library with pre-trained models
 
 """
 For more information on `huggingface_hub` Inference API support, please check the docs: https://huggingface.co/docs/huggingface_hub/v0.22.2/en/guides/inference
 """
 print("Starting......")
 
-
+# loading the Microsoft model
 chatbot = pipeline("text-generation", model="microsoft/Phi-3-mini-4k-instruct")
 
 print("defining function")
+
 def respond(
     message,
     history: list[tuple[str, str]],
@@ -20,12 +21,21 @@ def respond(
     top_p,
 ):
     print("enter response")
-    messages = [{"role": "system", "content": system_message}]
-    messages.append({"role": "user", "content": message})
-    print("getting response", messages )
-    response = chatbot(messages) 
-    print("got response", response )
-    return response[-1]['generated_text'][-1]['content']
+    conversation = f"{system_message}\n"
+    for user_msg, bot_msg in history:
+        conversation += f"User: {user_msg}\nAssistant: {bot_msg}\n"
+    conversation += f"User: {message}\nAssistant:"
+    print("getting response", conversation)
+
+    response = chatbot(
+        conversation,
+        max_new_tokens=max_tokens,
+        temperature=temperature,
+        top_p=top_p
+    )
+
+    print("got response", response)
+    return response[0]['generated_text'].split("Assistant:")[-1].strip()
    
 
 
