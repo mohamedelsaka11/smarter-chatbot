@@ -39,7 +39,7 @@ demo = gr.ChatInterface(
         gr.Slider(minimum=1, maximum=2048, value=512, step=1, label="Max new tokens"),
         
         
-        ),
+    
     ],
 )
 
