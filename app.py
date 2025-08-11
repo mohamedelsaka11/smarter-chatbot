@@ -8,7 +8,7 @@ For more information on `huggingface_hub` Inference API support, please check th
 print("Starting......")
 
 
-chatbot = pipeline("text-generation", model="gpt2")
+chatbot = pipeline("text-generation", model="microsoft/Phi-3-mini-4k-instruct")
 
 print("defining function")
 def respond(
