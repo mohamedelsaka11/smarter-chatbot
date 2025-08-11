@@ -25,7 +25,7 @@ def respond(
     print("getting response", messages )
     response = chatbot(messages) 
     print("got response", response )
-    return response[-1]['generated text'][-1]['content']
+    return response[-1]['generated_text'][-1]['content']
    
 
 
