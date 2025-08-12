@@ -21,6 +21,7 @@ def respond(
     top_p,
 ):
     print("enter response")
+    history = history[-3:]  # Save last 3 messages only 
     conversation = f"{system_message}\n"
     for user_msg, bot_msg in history:
         conversation += f"User: {user_msg}\nAssistant: {bot_msg}\n"
@@ -46,10 +47,7 @@ demo = gr.ChatInterface(
     respond,
     additional_inputs=[
         gr.Textbox(value="You are a friendly Chatbot.", label="System message"),
-        gr.Slider(minimum=1, maximum=2048, value=512, step=1, label="Max new tokens"),
-        
-        
-    
+        gr.Slider(minimum=1, maximum=1024, value=256, step=1, label="Max new tokens"),
     ],
 )
 
