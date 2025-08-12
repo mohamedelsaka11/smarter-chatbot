@@ -1,12 +1,37 @@
----
-title: Smarter Chatbot
-emoji: 💬
-colorFrom: yellow
-colorTo: purple
-sdk: gradio
-sdk_version: 5.0.1
-app_file: app.py
-pinned: false
+# 🧠 Smarter Chatbot
+
+An **AI-powered conversational assistant** built with [Python](https://www.python.org/), [Gradio](https://www.gradio.app/), and [Hugging Face Transformers](https://huggingface.co/transformers/).  
+The chatbot uses **Microsoft Phi-3-mini-4k-instruct** for generating **context-aware** and **human-like** responses.
+
 ---
 
-An example chatbot using [Gradio](https://gradio.app), [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/v0.22.2/en/index), and the [Hugging Face Inference API](https://huggingface.co/docs/api-inference/index).
+## 📸 Demo
+Here’s what the interface looks like:
+
+![Chatbot Interface](Screenshot 140738.png)
+![Chatbot Interface](Screenshot 140821.png)
+
+---
+
+## 🚀 Features
+- **Intelligent Conversations** — Powered by Microsoft Phi-3-mini-4k-instruct.
+- **Conversation Memory** — Remembers the last 3 user–assistant exchanges.
+- **Customizable Parameters** — Control `max_tokens`, `temperature`, and `top_p`.
+- **Interactive UI** — Simple and fast interface with Gradio.
+- **Lightweight & Easy to Run** — No complex setup required.
+
+---
+
+## 🛠 Tech Stack
+- **Language:** Python 3.10+
+- **Libraries:** Gradio, Transformers, Hugging Face Hub
+- **Model:** microsoft/Phi-3-mini-4k-instruct
+
+---
+
+## 📦 Installation
+
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/USERNAME/smarter-chatbot.git
+cd smarter-chatbot
