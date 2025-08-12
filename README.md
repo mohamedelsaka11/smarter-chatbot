@@ -8,8 +8,8 @@ The chatbot uses **Microsoft Phi-3-mini-4k-instruct** for generating **context-a
 ## 📸 Demo
 Here’s what the interface looks like:
 
-![Chatbot Interface]((https://github.com/mohamedelsaka11/smarter-chatbot/commit/1aabe6602d6e7ea9e7947d896b456d121dc0ee94))
-![Chatbot Interface](Screenshot 140821.png)
+![Chatbot Screenshot 1](Screenshot%20140738.png)
+![Chatbot Screenshot 2](Screenshot%20140821.png)
 
 ---
 
